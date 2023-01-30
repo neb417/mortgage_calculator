@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
 
   def create
     @user
-    # binding.pry
   end
 
   private
@@ -12,6 +11,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
+      require_user
       redirect_to dashboard_path(@user)
     else
       flash[:alert] = 'User name and/or password is incorrect'
