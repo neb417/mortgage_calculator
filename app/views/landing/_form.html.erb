@@ -1,12 +1,12 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with url: :sessions, locals: true do |form| %>
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, required: true %>
   </div>
 
   <div>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, required: true %>
   </div>
 
   <div>
