@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       require_user
-      # give_token
       flash[:success] = "Welcome #{user.name}"
       redirect_to session.delete(:return_to) || dashboard_path
     else
