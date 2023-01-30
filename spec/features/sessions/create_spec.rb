@@ -10,11 +10,10 @@ RSpec.describe 'Sessions create' do
   describe 'has correct routing' do
     it 'routes to sessions' do
       fill_in :email, with: user.email
-      fill_in :password, with: user.password_digest
-
+      fill_in :password, with: user.password
       click_on 'Login'
 
-      expect(current_path).to eq sessions_path
+      expect(current_path).to eq dashboard_path(user)
     end
   end
 end
