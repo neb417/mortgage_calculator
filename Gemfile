@@ -51,6 +51,7 @@ gem 'bootsnap', require: false
 gem 'dotenv'
 gem 'faraday'
 gem 'figaro'
+gem 'net-http'
 gem 'recaptcha'
 
 group :development, :test do
