@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates_presence_of :password
 
   has_secure_password
+
+  def generate_api
+    SecureRandom.urlsafe_base64
+  end
 end

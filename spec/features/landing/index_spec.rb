@@ -31,7 +31,7 @@ RSpec.describe 'landing index' do
       expect(current_path).to eq new_user_path
     end
 
-    it 'logs into session' do
+    it 'logs into dashboard' do
       fill_in :email, with: user.email
       fill_in :password, with: user.password
       click_on 'Login'

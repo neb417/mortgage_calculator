@@ -8,7 +8,7 @@ RSpec.describe 'Sessions create' do
   end
 
   describe 'has correct routing' do
-    it 'routes to sessions' do
+    it 'routes to dashboard' do
       fill_in :email, with: user.email
       fill_in :password, with: user.password
       click_on 'Login'
