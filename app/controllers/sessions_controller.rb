@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def set_user
     @user = User.find_by_email(params[:email])
-    if @user&.authenticate(params[:password])
+    if @user&.authenticate(params[:password]) && verify_recaptcha(model: @user)
       session[:user_id] = @user.id
       require_user
       redirect_to dashboard_path(@user)
