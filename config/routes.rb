@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'landing#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :sessions, only: :create
+  resources :dashboard, only: :show, controller: 'dashboard'
+  resources :users
 end
