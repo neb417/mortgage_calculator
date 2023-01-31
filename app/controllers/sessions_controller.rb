@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path(@user)
     else
       flash[:alert] = 'User name and/or password is incorrect'
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 end
