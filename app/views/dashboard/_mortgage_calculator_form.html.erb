@@ -1,0 +1,14 @@
+<%= turbo_frame_tag 'monthly_payment_calculator' do %>
+
+  <%= form_with url: monthly_payment_dashboard_path, method: :get, local: true do |f| %>
+    <%= f.label :home_price %>
+    <%= f.number_field :home_price, placeholder: '200000', required: true %>
+    <br>
+    <%= f.label :down_payment %>
+    <%= f.number_field :down_payment, placeholder: '4000', required: true %>
+    <br>
+    <%= f.submit 'Find my Payment' %>
+  <% end %>
+
+  <%= @monthly_payment.nil? ? 'Please enter your home price and down payment to view monthly payment' : "Your estimated monthly payment for a #{@home_price} home with a down payment of #{@down_payment} is #{@monthly_payment}" %>
+<% end %>
